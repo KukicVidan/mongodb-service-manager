@@ -137,27 +137,29 @@ Now, when you open a new PowerShell session, the MongoDB management functions wi
 
 ## Linux Part
 
-If you're also working with Linux, I've created a simple set of aliases to manage MongoDB services.
+If you're also working with Linux, I've created a simple alias function to manage MongoDB services.
 
 ### Linux Aliases
 
 Below are some useful aliases for managing MongoDB on Linux:
 
 ```bash
-# Alias to start MongoDB service
-alias start-mongo='sudo systemctl start mongodb'
-
-# Alias to stop MongoDB service
-alias stop-mongo='sudo systemctl stop mongodb'
-
-# Alias to restart MongoDB service
-alias restart-mongo='sudo systemctl restart mongodb'
-
-# Alias to check MongoDB status
-alias status-mongo='systemctl status mongodb'
+mongodb() {
+    if [ "$1" = "start" ]; then
+        sudo systemctl start mongod
+    elif [ "$1" = "stop" ]; then
+        sudo systemctl stop mongod
+    elif [ "$1" = "restart" ]; then
+        sudo systemctl restart mongod
+    elif [ "$1" = "status" ]; then
+        sudo systemctl status mongod
+    else
+        echo "Usage: mongodb {start|stop}"
+    fi
+}
 ```
 
-You can add these aliases to your `~/.bashrc` or `~/.zshrc` file to use them directly from the terminal.
+You can add this function to your `~/.bashrc` or `~/.zshrc` file to use them directly from the terminal.(remmember to source ~/.zshrc or ~/.bashrc)
 
 ## Troubleshooting
 
@@ -181,7 +183,7 @@ Ensure that you have Nerd Fonts installed and the correct terminal profile (e.g.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. 
 
 
 

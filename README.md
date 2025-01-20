@@ -1,5 +1,7 @@
 i know this is not important at all but might help someone.
 
+![Image](https://github.com/user-attachments/assets/0c548452-c374-458e-a1fc-fc0987ac3caf)
+
 # MongoDB PowerShell Service Manager
 
 This repository contains a PowerShell script that allows you to easily manage the MongoDB service on Windows. The script provides commands to **start**, **stop**, **restart**, and **check the status** of MongoDB. Additionally, it displays MongoDB service details such as uptime, CPU usage, and memory usage. You can also enhance the user experience by using Nerd Fonts for custom icons.
